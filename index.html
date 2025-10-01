@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>舒尔特方格 - 大脑专注力训练</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>舒尔特方格训练</h1>
+        <!-- 控制面板 -->
+        <div class="control-panel">
+            <button id="start-btn">开始游戏</button>
+            <span id="timer">00:00.000</span>
+        </div>
+        <!-- 游戏网格（5x5） -->
+        <div id="game-container">
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+        </div>
+        <!-- 结果提示 -->
+        <div id="result" class="hidden">
+            <h3>游戏结束！</h3>
+            <p>你的用时：<span id="duration"></span></p>
+            <p>你的等级：<span id="level"></span></p>
+        </div>
+        <!-- 排行榜 -->
+        <div class="leaderboard">
+            <h3>排行榜（Top 5）</h3>
+            <ul id="leaderboard"></ul>
+            <p>以5×5网格为例，成人的专注力水平可分为以下几个等级（参考《临床心理学手册》）：</p>
+            <p>优秀：完成时间＜10秒（视觉搜索速度快，注意力高度集中）；</p>
+            <p>良好：10-15秒（专注力较好，能快速切换目标）；</p>
+            <p>中等：15-25秒（正常范围，适合日常工作/学习需求）；</p>
+            <p>及格：25-35秒（注意力略有分散，需加强训练）；</p>
+            <p>不合格：＞35秒（注意力持续时间短，易分心，可能需要专业干预）。</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

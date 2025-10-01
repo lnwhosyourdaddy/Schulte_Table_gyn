@@ -1,0 +1,197 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.control-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+#start-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#start-btn:hover {
+    background-color: #45a049;
+}
+
+#timer {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+#game-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.grid-item {
+    width: 100%;
+    padding-bottom: 100%;
+    /* 正方形比例 */
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.grid-item::after {
+    content: attr(data-number);
+    /* 从data属性获取数字 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.grid-item:hover {
+    background-color: #d0d0d0;
+    transform: scale(1.05);
+}
+
+.grid-item.clicked {
+    background-color: #4CAF50;
+    /* 正确点击的绿色 */
+    color: #fff;
+    cursor: not-allowed;
+    transform: scale(1);
+}
+
+.grid-item.error {
+    background-color: #dc3545;
+    /* 错误点击的红色 */
+    color: #fff;
+}
+
+#result {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+#result.hidden {
+    display: none;
+}
+
+#result h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#result p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.leaderboard {
+    margin-top: 30px;
+}
+
+.leaderboard h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#leaderboard {
+    list-style-type: none;
+    padding: 0;
+}
+
+#leaderboard li {
+    padding: 10px 15px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #666;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#leaderboard li:first-child {
+    background-color: #fff3cd;
+    /* 第一名的黄色背景 */
+    border-color: #ffeeba;
+    color: #856404;
+    font-weight: bold;
+}
+
+.level {
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* 为不同等级添加不同的颜色 */
+.level:contains("优秀") {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.level:contains("良好") {
+    background-color: #8BC34A;
+    color: white;
+}
+
+.level:contains("中等") {
+    background-color: #FFC107;
+    color: black;
+}
+
+.level:contains("及格") {
+    background-color: #FF9800;
+    color: white;
+}
+
+.level:contains("不合格") {
+    background-color: #F44336;
+    color: white;
+}
