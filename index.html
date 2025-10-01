@@ -11,11 +11,14 @@
 <body>
     <div class="container">
         <h1>舒尔特方格训练</h1>
+
         <!-- 控制面板 -->
         <div class="control-panel">
             <button id="start-btn">开始游戏</button>
+            <button id="rules-btn">游戏规则</button>
             <span id="timer">00:00.000</span>
         </div>
+
         <!-- 游戏网格（5x5） -->
         <div id="game-container">
             <div class="grid-item"></div>
@@ -44,24 +47,79 @@
             <div class="grid-item"></div>
             <div class="grid-item"></div>
         </div>
+
         <!-- 结果提示 -->
         <div id="result" class="hidden">
             <h3>游戏结束！</h3>
             <p>你的用时：<span id="duration"></span></p>
             <p>你的等级：<span id="level"></span></p>
+            <button id="restart-btn">再玩一次</button>
         </div>
+
         <!-- 排行榜 -->
         <div class="leaderboard">
             <h3>排行榜（Top 5）</h3>
             <ul id="leaderboard"></ul>
+        </div>
+
+        <!-- 等级说明 -->
+        <div class="level-info">
+            <h3>专注力等级说明</h3>
             <p>以5×5网格为例，成人的专注力水平可分为以下几个等级（参考《临床心理学手册》）：</p>
-            <p>优秀：完成时间＜10秒（视觉搜索速度快，注意力高度集中）；</p>
-            <p>良好：10-15秒（专注力较好，能快速切换目标）；</p>
-            <p>中等：15-25秒（正常范围，适合日常工作/学习需求）；</p>
-            <p>及格：25-35秒（注意力略有分散，需加强训练）；</p>
-            <p>不合格：＞35秒（注意力持续时间短，易分心，可能需要专业干预）。</p>
+            <ul>
+                <li><span class="level-badge excellent">优秀</span>：完成时间＜10秒（视觉搜索速度快，注意力高度集中）</li>
+                <li><span class="level-badge good">良好</span>：10-15秒（专注力较好，能快速切换目标）</li>
+                <li><span class="level-badge medium">中等</span>：15-25秒（正常范围，适合日常工作/学习需求）</li>
+                <li><span class="level-badge pass">及格</span>：25-35秒（注意力略有分散，需加强训练）</li>
+                <li><span class="level-badge fail">不合格</span>：＞35秒（注意力持续时间短，易分心，可能需要专业干预）</li>
+            </ul>
         </div>
     </div>
+
+    <!-- 游戏规则弹窗 -->
+    <div id="rules-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>舒尔特方格游戏规则</h2>
+            <div class="rules-content">
+                <div class="rule-item">
+                    <h3>🎯 游戏目标</h3>
+                    <p>按照数字顺序从1到25依次点击方格，用时越短越好。</p>
+                </div>
+                <div class="rule-item">
+                    <h3>⚡ 游戏流程</h3>
+                    <ol>
+                        <li>点击"开始游戏"按钮开始挑战</li>
+                        <li>从数字1开始，按顺序点击到25</li>
+                        <li>点击正确时方格会变绿色</li>
+                        <li>点击错误时方格会短暂变红色</li>
+                        <li>完成所有数字后显示成绩和等级</li>
+                    </ol>
+                </div>
+                <div class="rule-item">
+                    <h3>🏆 等级标准</h3>
+                    <ul>
+                        <li><strong>优秀</strong>：＜10秒 - 注意力高度集中</li>
+                        <li><strong>良好</strong>：10-15秒 - 专注力较好</li>
+                        <li><strong>中等</strong>：15-25秒 - 正常水平</li>
+                        <li><strong>及格</strong>：25-35秒 - 需加强训练</li>
+                        <li><strong>不合格</strong>：＞35秒 - 注意力待提升</li>
+                    </ul>
+                </div>
+                <div class="rule-item">
+                    <h3>💡 训练建议</h3>
+                    <ul>
+                        <li>每天练习5-10分钟效果最佳</li>
+                        <li>保持环境安静，集中注意力</li>
+                        <li>用余光扫视，不要紧盯单个数字</li>
+                        <li>记录进步，挑战自我记录</li>
+                    </ul>
+                </div>
+            </div>
+            <button id="start-from-rules" class="start-btn">开始游戏</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 
